@@ -13,3 +13,9 @@ Keep a Changelog, and the project uses semantic versioning.
 
 ### Fixed
 
+- Share-alike obligations propagate through nested manifest references
+  instead of stopping at the first level.
+
+## [1.0.2] - 2025-11-04
+
+### Added
