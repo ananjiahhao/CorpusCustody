@@ -19,3 +19,9 @@ Keep a Changelog, and the project uses semantic versioning.
 ## [1.0.2] - 2025-11-04
 
 ### Added
+
+- Unknown-license fixture and the unknown handling path in the report.
+
+## [1.0.1] - 2024-06-25
+
+### Fixed
