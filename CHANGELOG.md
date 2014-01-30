@@ -25,3 +25,9 @@ Keep a Changelog, and the project uses semantic versioning.
 ## [1.0.1] - 2024-06-25
 
 ### Fixed
+
+- SPDX identifier matching is case insensitive now, per the specification.
+
+## [1.0.0] - 2023-10-17
+
+### Added
