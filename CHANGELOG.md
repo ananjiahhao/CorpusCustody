@@ -31,3 +31,8 @@ Keep a Changelog, and the project uses semantic versioning.
 ## [1.0.0] - 2023-10-17
 
 ### Added
+
+- Stable CLI contract for check, explain, and version, exit codes 0/1/2.
+- Tests pin the gate decisions on all three bundled fixtures.
+
+## [0.9.5] - 2022-11-29
