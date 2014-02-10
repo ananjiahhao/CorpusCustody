@@ -36,3 +36,9 @@ Keep a Changelog, and the project uses semantic versioning.
 - Tests pin the gate decisions on all three bundled fixtures.
 
 ## [0.9.5] - 2022-11-29
+
+### Changed
+
+- Maintenance release: documentation pass and fixture refresh.
+
+## [0.9.0] - 2021-09-07
