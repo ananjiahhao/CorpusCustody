@@ -42,3 +42,9 @@ Keep a Changelog, and the project uses semantic versioning.
 - Maintenance release: documentation pass and fixture refresh.
 
 ## [0.9.0] - 2021-09-07
+
+### Added
+
+- Obligation matrix showing which obligations each license class imposes.
+- JSON output for pipeline use.
+
