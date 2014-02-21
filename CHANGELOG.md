@@ -60,3 +60,8 @@ Keep a Changelog, and the project uses semantic versioning.
 
 - Report renderer with stable finding names.
 - CLI entry point with subcommands.
+
+## [0.6.0] - 2018-11-06
+
+### Added
+
