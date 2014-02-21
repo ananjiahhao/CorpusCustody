@@ -54,3 +54,9 @@ Keep a Changelog, and the project uses semantic versioning.
 
 - Compatibility check between two licenses with a verdict per direction.
 
+## [0.7.0] - 2019-08-20
+
+### Added
+
+- Report renderer with stable finding names.
+- CLI entry point with subcommands.
