@@ -48,3 +48,9 @@ Keep a Changelog, and the project uses semantic versioning.
 - Obligation matrix showing which obligations each license class imposes.
 - JSON output for pipeline use.
 
+## [0.8.0] - 2020-12-15
+
+### Added
+
+- Compatibility check between two licenses with a verdict per direction.
+
