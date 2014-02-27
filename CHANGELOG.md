@@ -65,3 +65,9 @@ Keep a Changelog, and the project uses semantic versioning.
 
 ### Added
 
+- Test suite covering parsing, the gate, and the CLI.
+
+## [0.5.0] - 2017-07-25
+
+### Added
+
