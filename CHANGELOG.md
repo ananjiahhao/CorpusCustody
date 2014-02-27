@@ -77,3 +77,9 @@ Keep a Changelog, and the project uses semantic versioning.
 ## [0.4.0] - 2016-10-11
 
 ### Added
+
+- Provenance fields in the manifest reader: source, revision, and fetch date.
+
+## [0.3.0] - 2015-06-04
+
+### Added
