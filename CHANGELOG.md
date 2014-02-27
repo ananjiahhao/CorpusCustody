@@ -71,3 +71,9 @@ Keep a Changelog, and the project uses semantic versioning.
 
 ### Added
 
+- First gate rules: permissive passes, share-alike warns, unknown blocks.
+- Sample manifests for the three classes.
+
+## [0.4.0] - 2016-10-11
+
+### Added
