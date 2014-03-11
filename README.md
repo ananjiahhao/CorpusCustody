@@ -91,3 +91,16 @@ python -m corpuscustody
 ```
 usage: corpuscustody [-h] {resolve,gate,report,version} ...
 
+Training-data license and provenance gate.
+
+positional arguments:
+  {resolve,gate,report,version}
+    resolve             parse a manifest and resolve each record's license
+    gate                run the pass or refuse decision for a declared purpose
+    report              print the combined resolve and gate report
+    version             print the version
+
+options:
+  -h, --help            show this help message and exit
+```
+
