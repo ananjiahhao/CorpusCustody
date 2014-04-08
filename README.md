@@ -209,3 +209,16 @@ Five permissive records, attribution at most. It clears for commercial with four
 attribution notes and no findings.
 
 ```
+python -m corpuscustody gate samples/permissive.manifest --purpose commercial
+```
+
+```
+purpose: commercial
+records: 5
+decision: PASS
+findings: 0
+notes: 4
+  rec-0001 | MIT | attribution: attribution must be preserved
+  rec-0002 | Apache-2.0 | attribution: attribution must be preserved
+  rec-0004 | BSD-3-Clause | attribution: attribution must be preserved
+  rec-0005 | CC-BY-4.0 | attribution: attribution must be preserved
