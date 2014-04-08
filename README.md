@@ -195,3 +195,17 @@ through and land in a shipped product, and the first sign of trouble would be a
 takedown or a lawsuit. A refusal is loud and cheap: it stops the pipeline now,
 names the records, and asks a person to establish provenance before proceeding.
 That conservatism is deliberate and not adjustable by a flag.
+
+## A worked gate run
+
+Below are the real decisions for each of the three sample manifests, captured by
+running the CLI in this repository. The manifests are described in
+[samples/README.md](samples/README.md); they are hand-authored test vectors, not
+scraped data.
+
+### permissive.manifest, commercial: PASS, 0 findings
+
+Five permissive records, attribution at most. It clears for commercial with four
+attribution notes and no findings.
+
+```
