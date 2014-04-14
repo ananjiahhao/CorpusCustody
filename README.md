@@ -274,3 +274,16 @@ python -m corpuscustody gate samples/unknown.manifest --purpose internal
 purpose: internal
 records: 5
 decision: REFUSE
+findings: 2
+  rec-2003 | UNKNOWN | unknown: provenance unknown, cannot clear
+  rec-2005 | UNKNOWN | unknown: provenance unknown, cannot clear
+notes: 7
+  rec-2001 | MIT | attribution: attribution must be preserved
+  rec-2002 | CC-BY-4.0 | attribution: attribution must be preserved
+  rec-2003 | UNKNOWN | attribution: attribution must be preserved
+  rec-2003 | UNKNOWN | no_derivatives: no-derivatives license, transformation blocked
+  rec-2004 | Apache-2.0 | attribution: attribution must be preserved
+  rec-2005 | UNKNOWN | attribution: attribution must be preserved
+  rec-2005 | UNKNOWN | no_derivatives: no-derivatives license, transformation blocked
+```
+
