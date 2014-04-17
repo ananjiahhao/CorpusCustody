@@ -287,3 +287,16 @@ notes: 7
   rec-2005 | UNKNOWN | no_derivatives: no-derivatives license, transformation blocked
 ```
 
+The `UNKNOWN` records also emit `no_derivatives` notes for internal, because the
+sentinel carries every obligation and `no_derivatives` is a note under internal.
+
+## Manifest format field by field
+
+A manifest is a UTF-8 text file, one record per line. Blank lines and lines whose
+first non-space character is `#` are ignored, so manifests carry comments and
+stay diffable. Each record line has exactly three pipe-separated fields.
+
+```
+record_id | spdx_id | source
+```
+
