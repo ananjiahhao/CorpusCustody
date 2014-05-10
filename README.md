@@ -300,3 +300,16 @@ stay diffable. Each record line has exactly three pipe-separated fields.
 record_id | spdx_id | source
 ```
 
+| Field       | Position | Required | Meaning                                                              |
+| ----------- | -------- | -------- | -------------------------------------------------------------------- |
+| `record_id` | 1        | yes      | free text identifier for the record; an empty value is a parse error |
+| `spdx_id`   | 2        | no       | SPDX identifier; empty or unrecognised resolves to `UNKNOWN`         |
+| `source`    | 3        | no       | free text provenance note; not validated                            |
+
+Surrounding whitespace on each field is stripped. Parsing is deliberately dumb:
+`spdx_id` is read but not validated at parse time, so parsing and license policy
+stay in separate modules. Validation happens later, at resolve time. A line with
+anything other than three fields raises a `ManifestError` and the process exits
+2. A real sample manifest, comment lines and all:
+
+```
