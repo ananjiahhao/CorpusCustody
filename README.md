@@ -339,3 +339,16 @@ records: 5
   rec-1005 | GPL-3.0-only | attribution,share_alike
 license counts:
   Apache-2.0: 1
+  CC-BY-NC-4.0: 1
+  CC-BY-SA-4.0: 1
+  GPL-3.0-only: 1
+  MIT: 1
+```
+
+The `gate` view is fixed and diffable: a `purpose` line, a `records` count, a
+`decision` of `PASS` or `REFUSE`, a `findings` count with one line per finding,
+then a `notes` count with one line per note. Each issue line is
+`record_id | spdx_id | obligation: message`.
+
+On PASS, passing `--out PATH` writes a cleared manifest. It is written with LF
+line endings regardless of platform, so identical input produces byte-identical
