@@ -352,3 +352,16 @@ then a `notes` count with one line per note. Each issue line is
 
 On PASS, passing `--out PATH` writes a cleared manifest. It is written with LF
 line endings regardless of platform, so identical input produces byte-identical
+output. The file lists every checked record, its resolved identifier, and the
+purpose it was cleared for, under a three-line comment header.
+
+```
+python -m corpuscustody gate samples/permissive.manifest --purpose commercial --out cleared.manifest
+```
+
+```
+# corpuscustody cleared manifest
+# purpose: commercial
+# record_id | spdx_id | cleared_for
+rec-0001 | MIT | commercial
+rec-0002 | Apache-2.0 | commercial
