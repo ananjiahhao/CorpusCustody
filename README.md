@@ -365,3 +365,16 @@ python -m corpuscustody gate samples/permissive.manifest --purpose commercial --
 # record_id | spdx_id | cleared_for
 rec-0001 | MIT | commercial
 rec-0002 | Apache-2.0 | commercial
+rec-0003 | CC0-1.0 | commercial
+rec-0004 | BSD-3-Clause | commercial
+rec-0005 | CC-BY-4.0 | commercial
+```
+
+No cleared manifest is written on REFUSE, even if `--out` is given.
+
+## Exit codes
+
+The exit code is the machine-readable result. Use it in CI to fail a pipeline
+when the gate refuses.
+
+| Code | Meaning                                                        |
