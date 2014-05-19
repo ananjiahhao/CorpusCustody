@@ -392,3 +392,16 @@ meaningful.
 
 ## Reading the obligation matrix asset
 
+The matrix below is the license-by-obligation grid. A filled cell means the
+license carries that obligation. The `n` column is the record count per license
+summed across all three sample manifests.
+
+![License by obligation matrix: nine resolved licenses down the left with a per-license record count column, and five obligation columns (attribution, share alike, non commercial, no derivatives, unknown). Filled cells mark obligations. The UNKNOWN row is amber and every obligation cell is filled, showing it blocks every purpose.](docs/assets/obligation-matrix.svg)
+
+The `n` counts come from running `resolve` over the three sample manifests and
+summing: MIT 3, Apache-2.0 3, CC-BY-4.0 2, UNKNOWN 2, and BSD-3-Clause, CC0-1.0,
+CC-BY-SA-4.0, GPL-3.0-only, CC-BY-NC-4.0 at 1 each, for 15 records. The UNKNOWN
+row is amber because it is the row a reader must not miss: every obligation cell
+is filled, so it blocks every purpose.
+
+## Limitations, expanded
