@@ -418,3 +418,16 @@ does not:
 - decide whether attribution or share-alike terms are actually satisfied
   downstream, only that they attach,
 - distinguish jurisdictions, or account for fair use, database rights, or
+  contractual terms that sit on top of the license,
+- replace review by a person qualified to make licensing decisions.
+
+Treat a PASS as "no mechanical conflict was found in the table," not as a legal
+clearance. The obligation rules are deliberately conservative, so unknown
+provenance always blocks rather than defaulting to permissive. If the table does
+not contain an identifier, that identifier resolves to `UNKNOWN` and blocks; the
+correct fix is to add the identifier to `spdx.py` after a person has verified its
+obligations, not to loosen the default. Every result is input to a human
+decision, never a substitute for one.
+
+## Design decisions
+
