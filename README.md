@@ -444,3 +444,16 @@ obligations for the common identifiers are stable and few, so a short audited
 table is more trustworthy than an opaque remote answer. The cost is real and
 acknowledged: the table is incomplete, and any identifier it lacks resolves to
 `UNKNOWN` and blocks. That cost is paid on purpose, and it fails safe.
+
+**Refuse on unknown, not warn.** An unresolvable license makes the gate refuse
+for every purpose. The rejected alternative was to warn and let the set pass.
+That was rejected because a warning is a decision deferred to nobody: it scrolls
+past in a log, the pipeline goes green, and the unlabelled record ships. A
+refusal forces the decision to a person now, while it is cheap to fix. The
+conservatism is not configurable, because a flag to downgrade refusals to
+warnings would be the first thing switched on under deadline pressure, which is
+precisely when it is most dangerous.
+
+## Repository layout
+
+Generated from the real tree, `__pycache__` and build artifacts omitted.
