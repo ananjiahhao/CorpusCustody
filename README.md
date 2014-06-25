@@ -470,3 +470,16 @@ corpuscustody/
       logo.svg                  wordmark: three record blocks through a gate
       obligation-matrix.svg     license-by-obligation grid, counts from samples
   samples/
+    README.md                   description of the three test-vector manifests
+    permissive.manifest         five permissive records, passes every purpose
+    sharealike.manifest         share-alike and non-commercial mix
+    unknown.manifest            two records of unknown provenance
+  src/
+    corpuscustody/
+      __init__.py               package marker, holds __version__
+      __main__.py               entry point for python -m corpuscustody
+      cli.py                    argument parsing, subcommand dispatch, exit codes
+      manifest.py               line-oriented manifest parser, Record dataclass
+      spdx.py                   offline SPDX table, obligations, UNKNOWN sentinel
+      compat.py                 obligation-to-severity rules per purpose
+      gate.py                   PASS/REFUSE decision, cleared manifest writer
