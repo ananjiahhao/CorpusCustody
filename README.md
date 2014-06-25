@@ -457,3 +457,16 @@ precisely when it is most dangerous.
 ## Repository layout
 
 Generated from the real tree, `__pycache__` and build artifacts omitted.
+
+```
+corpuscustody/
+  README.md                     this file
+  CHANGELOG.md                  version history
+  LICENSE                       MIT license text
+  pyproject.toml                package metadata, entry point, build config
+  .gitignore                    ignored paths (pycache, build, venv)
+  docs/
+    assets/
+      logo.svg                  wordmark: three record blocks through a gate
+      obligation-matrix.svg     license-by-obligation grid, counts from samples
+  samples/
