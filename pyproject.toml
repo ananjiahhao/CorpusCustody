@@ -4,3 +4,4 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "corpuscustody"
+version = "1.0.3"
