@@ -8,3 +8,4 @@ version = "1.0.3"
 description = "Training-data license and provenance gate."
 readme = "README.md"
 requires-python = ">=3.11"
+license = { text = "MIT" }
