@@ -15,3 +15,4 @@ authors = [{ name = "CorpusCustody contributors" }]
 corpuscustody = "corpuscustody.cli:main"
 
 [tool.setuptools.packages.find]
+where = ["src"]
