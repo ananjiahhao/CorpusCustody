@@ -14,3 +14,4 @@ authors = [{ name = "CorpusCustody contributors" }]
 [project.scripts]
 corpuscustody = "corpuscustody.cli:main"
 
+[tool.setuptools.packages.find]
