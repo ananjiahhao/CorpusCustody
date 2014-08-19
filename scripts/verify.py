@@ -90,3 +90,15 @@ def _iter_tracked_text_files():
 
 def _iter_svgs():
     """Yield paths of every .svg under docs/assets/."""
+    if not os.path.isdir(ASSETS):
+        return
+    for dirpath, _dirnames, filenames in os.walk(ASSETS):
+        for name in filenames:
+            if name.endswith(".svg"):
+                yield os.path.join(dirpath, name)
+
+
+def _read(path):
+    with open(path, "r", encoding="utf-8") as handle:
+        return handle.read()
+
