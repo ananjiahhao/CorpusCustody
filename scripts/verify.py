@@ -53,3 +53,15 @@ SVG_NS = "{http://www.w3.org/2000/svg}"
 
 # Per-character width estimate in em, by font family class (Lesson 4 / check 8).
 EM_PER_CHAR_SANS = 0.58
+EM_PER_CHAR_MONO = 0.60
+
+
+def _iter_tracked_text_files():
+    """Yield paths of tracked text files under the project root.
+
+    Skips version-control, cache, and build directories, and skips files that
+    do not decode as UTF-8 text (binary assets such as .pyc).
+    """
+    skip_dirs = {".git", "__pycache__", "build", "dist", ".venv"}
+    text_exts = {
+        ".md",
