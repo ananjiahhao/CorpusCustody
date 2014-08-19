@@ -65,3 +65,16 @@ def _iter_tracked_text_files():
     skip_dirs = {".git", "__pycache__", "build", "dist", ".venv"}
     text_exts = {
         ".md",
+        ".py",
+        ".svg",
+        ".toml",
+        ".cff",
+        ".yml",
+        ".yaml",
+        ".cfg",
+        ".ini",
+        ".txt",
+        ".manifest",
+        ".editorconfig",
+        ".gitattributes",
+        ".gitignore",
