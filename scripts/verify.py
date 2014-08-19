@@ -78,3 +78,15 @@ def _iter_tracked_text_files():
         ".editorconfig",
         ".gitattributes",
         ".gitignore",
+    }
+    for dirpath, dirnames, filenames in os.walk(ROOT):
+        dirnames[:] = [d for d in dirnames if d not in skip_dirs and not d.endswith(".egg-info")]
+        for name in filenames:
+            ext = os.path.splitext(name)[1]
+            base = name
+            if ext in text_exts or base in {".editorconfig", ".gitattributes", ".gitignore"}:
+                yield os.path.join(dirpath, name)
+
+
+def _iter_svgs():
+    """Yield paths of every .svg under docs/assets/."""
