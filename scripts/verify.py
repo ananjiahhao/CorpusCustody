@@ -41,3 +41,15 @@ BANNED_MARKETING = [
     "synergy",
     "robust",
     "powerful",
+]
+
+# The three forms an em dash can take (Lesson 1).
+EM_DASH_FORMS = ["\u2014", "&#8212;", "&mdash;"]
+
+# Banned SVG filter primitives (glow, shadow, noise) per the standard.
+BANNED_SVG_FILTERS = ["feGaussianBlur", "feDropShadow", "feTurbulence"]
+
+SVG_NS = "{http://www.w3.org/2000/svg}"
+
+# Per-character width estimate in em, by font family class (Lesson 4 / check 8).
+EM_PER_CHAR_SANS = 0.58
