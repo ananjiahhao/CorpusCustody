@@ -102,3 +102,15 @@ def _read(path):
     with open(path, "r", encoding="utf-8") as handle:
         return handle.read()
 
+
+def check_svg_parses():
+    """Check 1: every .svg under docs/assets/ parses as XML."""
+    failures = []
+    for path in _iter_svgs():
+        try:
+            ET.parse(path)
+        except ET.ParseError as exc:
+            failures.append("{0}: {1}".format(os.path.relpath(path, ROOT), exc))
+    return failures
+
+
