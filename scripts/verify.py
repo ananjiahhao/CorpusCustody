@@ -114,3 +114,16 @@ def check_svg_parses():
     return failures
 
 
+def check_no_banned_filters():
+    """Check 2: no .svg contains a banned filter primitive."""
+    failures = []
+    for path in _iter_svgs():
+        text = _read(path)
+        for banned in BANNED_SVG_FILTERS:
+            if banned in text:
+                failures.append("{0}: contains {1}".format(os.path.relpath(path, ROOT), banned))
+    return failures
+
+
+def check_no_double_hyphen_in_comments():
+    """Check 3: no XML comment in any .svg contains the illegal `--` sequence."""
