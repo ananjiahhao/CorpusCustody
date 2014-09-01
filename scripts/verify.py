@@ -151,3 +151,15 @@ def check_no_em_dash():
         except (UnicodeDecodeError, OSError):
             continue
         for form in EM_DASH_FORMS:
+            if form in text:
+                label = "U+2014" if form == "\u2014" else form
+                failures.append(
+                    "{0}: contains {1}".format(os.path.relpath(path, ROOT), label)
+                )
+    return failures
+
+
+def check_readme_no_pandoc_image_attrs():
+    """Check 5: README.md has no pandoc style image attribute block."""
+    failures = []
+    if not os.path.isfile(README):
