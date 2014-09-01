@@ -139,3 +139,15 @@ def check_no_double_hyphen_in_comments():
     return failures
 
 
+def check_no_em_dash():
+    """Check 4: no tracked text file contains U+2014, &#8212;, or &mdash;."""
+    failures = []
+    for path in _iter_tracked_text_files():
+        # Do not flag this checker itself, which must name the forms it bans.
+        if os.path.abspath(path) == os.path.abspath(__file__):
+            continue
+        try:
+            text = _read(path)
+        except (UnicodeDecodeError, OSError):
+            continue
+        for form in EM_DASH_FORMS:
