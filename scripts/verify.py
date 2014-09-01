@@ -163,3 +163,15 @@ def check_readme_no_pandoc_image_attrs():
     """Check 5: README.md has no pandoc style image attribute block."""
     failures = []
     if not os.path.isfile(README):
+        return failures
+    text = _read(README)
+    # Match `){` then, before the closing brace, a width or height attribute.
+    pattern = re.compile(r"\)\{[^}]*\b(?:width|height)\b[^}]*\}")
+    if pattern.search(text):
+        failures.append("README.md: pandoc style image attribute block found")
+    return failures
+
+
+def check_readme_no_marketing():
+    """Check 6: README.md contains none of the banned marketing terms."""
+    failures = []
