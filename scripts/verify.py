@@ -188,3 +188,15 @@ def check_svg_accessibility():
     """Check 7: every .svg carries viewBox, role=img, a <title>, and a <desc>."""
     failures = []
     for path in _iter_svgs():
+        rel = os.path.relpath(path, ROOT)
+        try:
+            tree = ET.parse(path)
+        except ET.ParseError:
+            failures.append("{0}: does not parse, cannot check a11y".format(rel))
+            continue
+        root = tree.getroot()
+        if root.get("viewBox") is None:
+            failures.append("{0}: missing viewBox".format(rel))
+        if root.get("role") != "img":
+            failures.append("{0}: missing role=\"img\"".format(rel))
+        if root.find(".//{0}title".format(SVG_NS)) is None:
