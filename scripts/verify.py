@@ -224,3 +224,16 @@ def _text_edges(elem, inherited_family):
     font_size = elem.get("font-size")
     if font_size is None:
         return None
+    try:
+        size = float(font_size)
+    except ValueError:
+        return None
+    family = elem.get("font-family", inherited_family)
+    text = "".join(elem.itertext())
+    width = len(text) * _char_width_em(family) * size
+    anchor = elem.get("text-anchor", "start")
+    if anchor == "middle":
+        left = x - width / 2.0
+    elif anchor == "end":
+        left = x - width
+    else:
