@@ -237,3 +237,15 @@ def _text_edges(elem, inherited_family):
     elif anchor == "end":
         left = x - width
     else:
+        left = x
+    return (y, left, left + width)
+
+
+def check_no_overlapping_labels():
+    """Check 8: no two text labels sharing a baseline in any .svg overlap."""
+    failures = []
+    for path in _iter_svgs():
+        rel = os.path.relpath(path, ROOT)
+        try:
+            tree = ET.parse(path)
+        except ET.ParseError:
