@@ -261,3 +261,15 @@ def check_no_overlapping_labels():
                     edges = _text_edges(child, fam)
                     if edges is not None:
                         y, left, right = edges
+                        rows.setdefault(round(y), []).append((left, right, "".join(child.itertext())))
+                elif tag == "{0}g".format(SVG_NS):
+                    walk(child, child.get("font-family", inherited_family))
+                else:
+                    walk(child, inherited_family)
+
+        walk(root, root.get("font-family"))
+        for y, items in rows.items():
+            items.sort(key=lambda t: t[0])
+            for prev, cur in zip(items, items[1:]):
+                if cur[0] < prev[1] - 1e-6:
+                    failures.append(
