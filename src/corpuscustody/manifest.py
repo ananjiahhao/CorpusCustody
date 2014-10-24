@@ -21,3 +21,7 @@ from typing import List
 
 
 class ManifestError(ValueError):
+    """Raised when a manifest line cannot be parsed into a record."""
+
+
+@dataclass(frozen=True)
