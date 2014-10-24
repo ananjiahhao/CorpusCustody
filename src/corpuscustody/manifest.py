@@ -17,3 +17,7 @@ to UNKNOWN. This keeps parsing and license policy in separate modules.
 """
 
 from dataclasses import dataclass
+from typing import List
+
+
+class ManifestError(ValueError):
