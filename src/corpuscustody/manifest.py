@@ -30,3 +30,7 @@ class Record:
 
     line_no: int
     record_id: str
+    spdx_id: str
+    source: str
+
+
