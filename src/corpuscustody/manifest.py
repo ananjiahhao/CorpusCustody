@@ -46,3 +46,7 @@ def parse_line(line_no: int, raw: str) -> Record:
                 line_no, len(fields)
             )
         )
+    record_id = fields[0].strip()
+    spdx_id = fields[1].strip()
+    source = fields[2].strip()
+    if not record_id:
