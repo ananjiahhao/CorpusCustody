@@ -34,3 +34,7 @@ class Record:
     source: str
 
 
+def parse_line(line_no: int, raw: str) -> Record:
+    """Parse a single non-comment, non-blank line into a Record.
+
+    Raises ManifestError if the line does not have exactly three fields.
