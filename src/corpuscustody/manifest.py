@@ -55,3 +55,7 @@ def parse_line(line_no: int, raw: str) -> Record:
 
 
 def parse_text(text: str) -> List[Record]:
+    """Parse manifest text into a list of Records in file order."""
+    records: List[Record] = []
+    for idx, raw in enumerate(text.splitlines(), start=1):
+        stripped = raw.strip()
