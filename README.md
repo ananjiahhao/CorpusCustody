@@ -483,3 +483,62 @@ corpuscustody/
       spdx.py                   offline SPDX table, obligations, UNKNOWN sentinel
       compat.py                 obligation-to-severity rules per purpose
       gate.py                   PASS/REFUSE decision, cleared manifest writer
+      report.py                 deterministic line rendering of resolve and gate
+  tests/
+    test_corpuscustody.py       unittest suite, stdlib only
+```
+
+## Glossary
+
+| Term            | Meaning                                                                     |
+| --------------- | --------------------------------------------------------------------------- |
+| Manifest        | a text file listing dataset records, one per line, three pipe-separated fields |
+| Record          | one line of a manifest: a `record_id`, an `spdx_id`, and a `source`         |
+| SPDX identifier | a standard short name for a license, such as `MIT` or `CC-BY-SA-4.0`        |
+| Obligation      | a mechanical yes/no fact a license imposes (attribution, share alike, etc.) |
+| Purpose         | the declared use of the combined set: internal, commercial, or redistribute |
+| Finding         | a blocking issue; any finding makes the gate refuse                         |
+| Note            | an informational issue that does not block                                  |
+| Resolve         | mapping an `spdx_id` to a license and its obligations via the offline table |
+| Gate            | the PASS or REFUSE decision over a set for a purpose                        |
+| Cleared manifest| the file written on PASS listing each record and the purpose cleared for    |
+| UNKNOWN         | the sentinel for unresolvable provenance; carries every obligation, blocks all |
+
+## Verification
+
+Run the test suite from the project root:
+
+```
+set PYTHONPATH=src
+python -m unittest discover -s tests -v
+```
+
+The suite has 29 tests, all passing in this session (`Ran 29 tests in 0.009s`,
+timing on an unspecified machine and indicative only). They cover: SPDX
+resolution including empty, explicit `UNKNOWN`, and unrecognised identifiers all
+mapping to the sentinel; manifest parsing including field-count errors, empty
+record ids, comment and blank handling, and preserved empty license fields;
+compatibility evaluation including permissive clearing for commercial,
+share-alike blocking commercial but clearing internal, and unknown blocking every
+purpose; the gate PASS/REFUSE decision and deterministic cleared-manifest lines;
+report rendering and license counts; and the CLI end to end, including exit codes
+0, 1, and 2 and writing the cleared manifest on pass.
+
+## Roadmap
+
+No dates. In rough priority order:
+
+- widen the SPDX table with more common identifiers, each added only after its
+  obligations are verified by a person,
+- support license expressions such as `MIT OR Apache-2.0` and `GPL-3.0 WITH`
+  exceptions, resolving to the least restrictive satisfiable combination,
+- optionally read `SPDX-License-Identifier` tags from a directory tree so a
+  manifest can be generated rather than hand-written,
+- a machine-readable output mode (JSON) alongside the current line format for
+  tools that would rather parse than diff.
+
+## License
+
+MIT. See [LICENSE](LICENSE).
+
+<!-- draft note 88 -->
