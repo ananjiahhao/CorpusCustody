@@ -22,3 +22,11 @@ from typing import Dict, List
 # Obligation keys, declared once so callers can iterate deterministically.
 OBLIGATIONS: List[str] = [
     "attribution",
+    "share_alike",
+    "non_commercial",
+    "no_derivatives",
+    "unknown",
+]
+
+
+@dataclass(frozen=True)
