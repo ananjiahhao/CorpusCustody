@@ -30,3 +30,10 @@ OBLIGATIONS: List[str] = [
 
 
 @dataclass(frozen=True)
+class License:
+    """A license identifier and the obligations it imposes."""
+
+    spdx_id: str
+    attribution: bool = False
+    share_alike: bool = False
+    non_commercial: bool = False
