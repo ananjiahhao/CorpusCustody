@@ -44,3 +44,10 @@ class License:
         """Return the active obligation names in declared order."""
         active = []
         for name in OBLIGATIONS:
+            if getattr(self, name):
+                active.append(name)
+        return active
+
+
+# The table. Kept short and honest. Every entry is a common identifier whose
+# obligations are well established and mechanical to state.
