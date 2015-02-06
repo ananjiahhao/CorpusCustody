@@ -51,3 +51,10 @@ class License:
 
 # The table. Kept short and honest. Every entry is a common identifier whose
 # obligations are well established and mechanical to state.
+_TABLE: Dict[str, License] = {
+    "CC0-1.0": License("CC0-1.0"),
+    "Unlicense": License("Unlicense"),
+    "MIT": License("MIT", attribution=True),
+    "BSD-2-Clause": License("BSD-2-Clause", attribution=True),
+    "BSD-3-Clause": License("BSD-3-Clause", attribution=True),
+    "Apache-2.0": License("Apache-2.0", attribution=True),
