@@ -65,3 +65,11 @@ _TABLE: Dict[str, License] = {
     "MPL-2.0": License("MPL-2.0", attribution=True, share_alike=True),
     "CC-BY-NC-4.0": License("CC-BY-NC-4.0", attribution=True, non_commercial=True),
     "CC-BY-ND-4.0": License("CC-BY-ND-4.0", attribution=True, no_derivatives=True),
+    "CC-BY-NC-ND-4.0": License(
+        "CC-BY-NC-ND-4.0",
+        attribution=True,
+        non_commercial=True,
+        no_derivatives=True,
+    ),
+}
+
