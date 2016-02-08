@@ -51,3 +51,12 @@ def decide(records: List[Record], purpose: str) -> GateResult:
     decision = PASS if result.clear else REFUSE
     return GateResult(
         purpose=result.purpose,
+        decision=decision,
+        record_count=len(records),
+        result=result,
+    )
+
+
+def cleared_manifest_lines(records: List[Record], purpose: str) -> List[str]:
+    """Build the cleared manifest lines for a passing set.
+
