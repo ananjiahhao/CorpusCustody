@@ -19,3 +19,10 @@ def license_counts(records: List[Record]) -> Dict[str, int]:
     for record in records:
         counter[resolve(record.spdx_id).spdx_id] += 1
     return dict(counter)
+
+
+def render_resolve(records: List[Record]) -> List[str]:
+    """Render the resolve view: each record and a license count summary."""
+    lines: List[str] = []
+    lines.append("records: {0}".format(len(records)))
+    for record in records:
