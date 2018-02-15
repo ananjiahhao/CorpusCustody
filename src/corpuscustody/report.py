@@ -34,3 +34,10 @@ def render_resolve(records: List[Record]) -> List[str]:
     lines.append("license counts:")
     counts = license_counts(records)
     for spdx_id in sorted(counts):
+        lines.append("  {0}: {1}".format(spdx_id, counts[spdx_id]))
+    return lines
+
+
+def render_gate(gate: GateResult) -> List[str]:
+    """Render the gate decision, findings, and notes."""
+    lines: List[str] = []
