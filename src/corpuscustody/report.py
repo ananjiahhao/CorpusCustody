@@ -41,3 +41,10 @@ def render_resolve(records: List[Record]) -> List[str]:
 def render_gate(gate: GateResult) -> List[str]:
     """Render the gate decision, findings, and notes."""
     lines: List[str] = []
+    lines.append("purpose: {0}".format(gate.purpose))
+    lines.append("records: {0}".format(gate.record_count))
+    lines.append("decision: {0}".format(gate.decision))
+    lines.append("findings: {0}".format(len(gate.findings)))
+    for issue in gate.findings:
+        lines.append(
+            "  {0} | {1} | {2}: {3}".format(
