@@ -107,3 +107,18 @@ class GateTests(unittest.TestCase):
     def test_permissive_passes(self):
         g = gate.decide(self._records("permissive.manifest"), "commercial")
         self.assertEqual(g.decision, gate.PASS)
+        self.assertFalse(g.refused)
+
+    def test_unknown_refuses(self):
+        g = gate.decide(self._records("unknown.manifest"), "internal")
+        self.assertEqual(g.decision, gate.REFUSE)
+        self.assertTrue(g.refused)
+
+    def test_cleared_manifest_lines_deterministic(self):
+        recs = self._records("permissive.manifest")
+        a = gate.cleared_manifest_lines(recs, "commercial")
+        b = gate.cleared_manifest_lines(recs, "commercial")
+        self.assertEqual(a, b)
+        self.assertTrue(a[0].startswith("# corpuscustody cleared manifest"))
+
+    def test_write_cleared_manifest(self):
