@@ -63,3 +63,18 @@ class ManifestTests(unittest.TestCase):
 
 
 class CompatTests(unittest.TestCase):
+    def _records(self, name):
+        return manifest.parse_file(os.path.join(SAMPLES, name))
+
+    def test_purpose_validation(self):
+        with self.assertRaises(compat.PurposeError):
+            compat.check_purpose("nonsense")
+        self.assertEqual(compat.check_purpose("Commercial"), "commercial")
+
+    def test_permissive_clear_for_commercial(self):
+        recs = self._records("permissive.manifest")
+        result = compat.evaluate(recs, "commercial")
+        self.assertTrue(result.clear)
+        self.assertEqual(result.findings, [])
+
+    def test_sharealike_blocks_commercial(self):
