@@ -92,3 +92,18 @@ class CompatTests(unittest.TestCase):
 
     def test_unknown_blocks_every_purpose(self):
         recs = self._records("unknown.manifest")
+        for purpose in compat.PURPOSES:
+            result = compat.evaluate(recs, purpose)
+            self.assertFalse(result.clear, purpose)
+            self.assertTrue(
+                any(i.obligation == "unknown" for i in result.findings), purpose
+            )
+
+
+class GateTests(unittest.TestCase):
+    def _records(self, name):
+        return manifest.parse_file(os.path.join(SAMPLES, name))
+
+    def test_permissive_passes(self):
+        g = gate.decide(self._records("permissive.manifest"), "commercial")
+        self.assertEqual(g.decision, gate.PASS)
