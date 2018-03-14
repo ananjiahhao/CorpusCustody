@@ -151,3 +151,18 @@ class CliTests(unittest.TestCase):
         import contextlib
 
         out = io.StringIO()
+        err = io.StringIO()
+        with contextlib.redirect_stdout(out), contextlib.redirect_stderr(err):
+            code = cli.main(argv)
+        return code, out.getvalue(), err.getvalue()
+
+    def _sample(self, name):
+        return os.path.join(SAMPLES, name)
+
+    def test_version(self):
+        code, out, _ = self._run(["version"])
+        self.assertEqual(code, 0)
+        self.assertIn(__version__, out)
+
+    def test_resolve_exit_zero(self):
+        code, out, _ = self._run(["resolve", self._sample("permissive.manifest")])
