@@ -137,3 +137,17 @@ class ReportTests(unittest.TestCase):
         return manifest.parse_file(os.path.join(SAMPLES, name))
 
     def test_license_counts(self):
+        counts = report.license_counts(self._records("unknown.manifest"))
+        self.assertEqual(counts["UNKNOWN"], 2)
+        self.assertEqual(counts["MIT"], 1)
+
+    def test_render_resolve_lines(self):
+        lines = report.render_resolve(self._records("permissive.manifest"))
+        self.assertEqual(lines[0], "records: 5")
+
+
+class CliTests(unittest.TestCase):
+    def _run(self, argv):
+        import contextlib
+
+        out = io.StringIO()
