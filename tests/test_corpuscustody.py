@@ -166,3 +166,18 @@ class CliTests(unittest.TestCase):
 
     def test_resolve_exit_zero(self):
         code, out, _ = self._run(["resolve", self._sample("permissive.manifest")])
+        self.assertEqual(code, 0)
+        self.assertIn("license counts:", out)
+
+    def test_gate_pass_exit_zero(self):
+        code, _, _ = self._run(
+            ["gate", self._sample("permissive.manifest"), "--purpose", "commercial"]
+        )
+        self.assertEqual(code, 0)
+
+    def test_gate_refuse_exit_one(self):
+        code, out, _ = self._run(
+            ["gate", self._sample("unknown.manifest"), "--purpose", "internal"]
+        )
+        self.assertEqual(code, 1)
+        self.assertIn("decision: REFUSE", out)
