@@ -7,3 +7,5 @@ resolve against the offline table in `src/corpuscustody/spdx.py`.
 
 - `permissive.manifest`: five records under permissive licenses (MIT, Apache-2.0,
   CC0-1.0, BSD-3-Clause, CC-BY-4.0). Passes every purpose. The only obligations
+  are attribution notes.
+
