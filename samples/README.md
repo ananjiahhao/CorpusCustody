@@ -9,3 +9,6 @@ resolve against the offline table in `src/corpuscustody/spdx.py`.
   CC0-1.0, BSD-3-Clause, CC-BY-4.0). Passes every purpose. The only obligations
   are attribution notes.
 
+- `sharealike.manifest`: five records that pass internal use but conflict with a
+  commercial purpose. It mixes a share-alike corpus (CC-BY-SA-4.0, GPL-3.0-only)
+  and a non-commercial corpus (CC-BY-NC-4.0) into the set.
