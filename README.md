@@ -541,4 +541,4 @@ No dates. In rough priority order:
 
 MIT. See [LICENSE](LICENSE).
 
-<!-- draft note 666 -->
+<!-- draft note 667 -->
