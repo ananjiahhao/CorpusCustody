@@ -3,3 +3,4 @@
 # Fields: record_id | spdx_id | source
 rec-0001 | MIT | github.com/example/tokenizer
 rec-0002 | Apache-2.0 | github.com/example/corpus-tools
+rec-0003 | CC0-1.0 | zenodo.org/record/000001
