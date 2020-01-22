@@ -3,3 +3,5 @@
 # it mixes a share-alike corpus and a non-commercial corpus into the release.
 # Fields: record_id | spdx_id | source
 rec-1001 | MIT | github.com/example/base-model
+rec-1002 | CC-BY-SA-4.0 | wikipedia.org/dump-2021
+rec-1003 | Apache-2.0 | github.com/example/cleaners
