@@ -4,3 +4,4 @@
 # blocks every purpose.
 # Fields: record_id | spdx_id | source
 rec-2001 | MIT | github.com/example/seed
+rec-2002 | CC-BY-4.0 | data.example.org/set-a
