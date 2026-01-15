@@ -59,3 +59,15 @@ def parse_text(text: str) -> List[Record]:
     records: List[Record] = []
     for idx, raw in enumerate(text.splitlines(), start=1):
         stripped = raw.strip()
+        if not stripped or stripped.startswith("#"):
+            continue
+        records.append(parse_line(idx, raw))
+    return records
+
+
+def parse_file(path: str) -> List[Record]:
+    """Read a manifest file from disk and parse it."""
+    with open(path, "r", encoding="utf-8") as handle:
+        return parse_text(handle.read())
+
+# draft note 1801
