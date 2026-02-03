@@ -56,3 +56,18 @@ def render_gate(gate: GateResult) -> List[str]:
         lines.append(
             "  {0} | {1} | {2}: {3}".format(
                 issue.record_id, issue.spdx_id, issue.obligation, issue.message
+            )
+        )
+    return lines
+
+
+def render_report(records: List[Record], gate: GateResult) -> List[str]:
+    """Render a combined report: resolve view then gate view."""
+    lines: List[str] = []
+    lines.append("== resolve ==")
+    lines.extend(render_resolve(records))
+    lines.append("== gate ==")
+    lines.extend(render_gate(gate))
+    return lines
+
+# draft note 1812
