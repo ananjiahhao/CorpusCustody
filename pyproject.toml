@@ -16,3 +16,9 @@ corpuscustody = "corpuscustody.cli:main"
 
 [tool.setuptools.packages.find]
 where = ["src"]
+
+[project.urls]
+Homepage = "https://github.com/ananjiahhao/CorpusCustody"
+Source = "https://github.com/ananjiahhao/CorpusCustody"
+
+<!-- draft note 1821 -->
