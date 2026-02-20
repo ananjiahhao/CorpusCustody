@@ -15,3 +15,10 @@ jobs:
       - name: Run tests
         env:
           PYTHONPATH: src
+        run: python -m unittest discover -s tests -v
+      - name: CLI smoke
+        env:
+          PYTHONPATH: src
+        run: python -m corpuscustody version
+
+# draft note 1827
