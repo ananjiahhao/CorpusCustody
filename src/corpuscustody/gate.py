@@ -86,4 +86,4 @@ def write_cleared_manifest(path: str, records: List[Record], purpose: str) -> No
     with open(path, "w", encoding="utf-8", newline="") as handle:
         handle.write(body)
 
-# draft note 1817
+# draft note 1825
