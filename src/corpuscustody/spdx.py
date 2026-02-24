@@ -104,4 +104,4 @@ def resolve(spdx_id: str) -> License:
         return UNKNOWN
     return _TABLE.get(key, UNKNOWN)
 
-# draft note 1819
+# draft note 1829
