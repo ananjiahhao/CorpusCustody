@@ -69,5 +69,3 @@ def render_report(records: List[Record], gate: GateResult) -> List[str]:
     lines.append("== gate ==")
     lines.extend(render_gate(gate))
     return lines
-
-# draft note 1812
