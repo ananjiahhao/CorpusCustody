@@ -83,3 +83,17 @@ Keep a Changelog, and the project uses semantic versioning.
 ## [0.3.0] - 2015-06-04
 
 ### Added
+
+- SPDX identifier table with the common permissive and copyleft families.
+
+## [0.2.0] - 2014-09-16
+
+### Added
+
+- License compatibility model with per class obligations.
+
+## [0.1.0] - 2013-05-20
+
+### Added
+
+- Initial manifest reader and a single check entry point.
