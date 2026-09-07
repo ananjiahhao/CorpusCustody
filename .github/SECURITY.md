@@ -27,5 +27,3 @@ unbounded memory use while parsing a hostile file.
   means the input is internally consistent, not that a deployment is healthy.
 - Findings are advisory. No output from this tool should be treated as a
   guarantee about a production system.
-
-<!-- draft note 1823 -->
