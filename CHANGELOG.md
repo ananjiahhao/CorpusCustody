@@ -8,6 +8,7 @@ Keep a Changelog, and the project uses semantic versioning.
 ### Changed
 
 - Obligation matrix wording is under review for the next patch.
+- An export mode for the matrix is being sketched.
 
 ## [1.0.3] - 2026-07-14
 
