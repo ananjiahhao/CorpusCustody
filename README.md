@@ -1,7 +1,7 @@
 <div align="center">
 
 <img src="docs/assets/banner.svg" width="100%"
-     alt="CorpusCustody banner: offline license and provenance gate, with a gate card showing pass, hold, and block verdicts." />
+     alt="CorpusCustody banner: record blocks passing through a gate, with pass, hold, and block verdicts." />
 
 # CorpusCustody
 
