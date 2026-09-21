@@ -1,4 +1,11 @@
-# <img src="docs/assets/logo.svg" alt="Three record blocks passing through a gate bar, the custody half of the wordmark in amber" width="40" align="top"> CorpusCustody
+<div align="center">
+
+<img src="docs/assets/banner.svg" width="100%"
+     alt="CorpusCustody banner: offline license and provenance gate, with a gate card showing pass, hold, and block verdicts." />
+
+# CorpusCustody
+
+</div>
 
 <p align="right">
   <a href="#the-mixing-problem">Problem</a> &middot;
